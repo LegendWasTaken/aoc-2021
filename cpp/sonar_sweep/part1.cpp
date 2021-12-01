@@ -25,8 +25,8 @@ int main()
 
     auto depth = depths[0];
     auto larger = std::count_if(depths.begin() + 1, depths.end(), [&depth](auto d) {
-        depth = d;
-        return d > depth;
+        std::swap(depth, d);
+        return d < depth;
     });
 
     std::cout << larger << std::endl;
